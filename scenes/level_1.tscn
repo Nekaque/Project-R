@@ -1,8 +1,27 @@
-[gd_scene load_steps=7 format=4 uid="uid://d1y1d50st05u2"]
+[gd_scene load_steps=8 format=4 uid="uid://d1y1d50st05u2"]
 
 [ext_resource type="PackedScene" uid="uid://blecki1e2xtkf" path="res://scenes/player.tscn" id="1_swng8"]
 [ext_resource type="TileSet" uid="uid://kbhst3ledd6r" path="res://assets/world_tiles.tres" id="2_2r7dy"]
 [ext_resource type="PackedScene" uid="uid://dl14ysbsm6tta" path="res://scenes/platform.tscn" id="3_i60e8"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_elk6l"]
+friction = 0.1
+bounce = 0.63
+
+[sub_resource type="Animation" id="Animation_psv34"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(539, 403)]
+}
 
 [sub_resource type="Animation" id="Animation_2m77v"]
 resource_name = "left-right"
@@ -20,21 +39,6 @@ tracks/0/keys = {
 "values": [Vector2(539, 403), Vector2(669, 403)]
 }
 
-[sub_resource type="Animation" id="Animation_psv34"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(539, 403)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mgi2u"]
 _data = {
 "RESET": SubResource("Animation_psv34"),
@@ -44,6 +48,7 @@ _data = {
 [node name="Level 1" type="Node2D"]
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
+visible = false
 scale = Vector2(0.75, 0.75)
 scroll_scale = Vector2(0.5, 0.5)
 repeat_size = Vector2(896, 0)
@@ -56,6 +61,7 @@ tile_set = ExtResource("2_2r7dy")
 [node name="Platform" parent="." instance=ExtResource("3_i60e8")]
 position = Vector2(539, 403)
 scale = Vector2(1.5, 1.5)
+physics_material_override = SubResource("PhysicsMaterial_elk6l")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platform"]
 reset_on_save = false
@@ -71,11 +77,12 @@ position = Vector2(640, 360)
 zoom = Vector2(2, 2)
 
 [node name="PlayArea" type="TileMapLayer" parent="."]
-position = Vector2(640, 360)
+position = Vector2(639, 359)
 tile_map_data = PackedByteArray("AADy/wYAAAAAAAAAAADz/wYAAAAAAAAAAAD0/wYAAAAAAAAAAAD1/wYAAAAAAAAAAAD2/wYAAAAAAAAAAAD3/wYAAAAAAAAAAAD4/wYAAAAAAAAAAAD5/wYAAAAAAAAAAAD6/wYAAAAAAAAAAAD7/wYAAAAAAAAAAAD8/wYAAAAAAAAAAAD9/wYAAAAAAAAAAAD+/wYAAAAAAAAAAAD//wYAAAAAAAAAAAAAAAYAAAAAAAAAAAABAAYAAAAAAAAAAAACAAYAAAAAAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAHAAYAAAAAAAAAAAAIAAYAAAAAAAAAAAAJAAYAAAAAAAAAAADx/wYAAAAAAAAAAADw/wYAAAAAAAAAAADv/wYAAAAAAAAAAADu/wYAAAAAAAAAAADt/wYAAAAAAAAAAADs/wYAAAAAAAAAAADr/wYAAAAAAAAAAADq/wYAAAAAAAAAAADp/wYAAAAAAAAAAADo/wYAAAAAAAAAAADn/wYAAAAAAAAAAADm/wYAAAAAAAAAAADl/wYAAAAAAAAAAADk/wYAAAAAAAAAAADj/wYAAAAAAAAAAADi/wYAAAAAAAAAAADh/wYAAAAAAAAAAADg/wYAAAAAAAAAAADf/wYAAAAAAAAAAADe/wYAAAAAAAAAAADd/wYAAAAAAAAAAADc/wYAAAAAAAAAAADb/wYAAAAAAAAAAADa/wYAAAAAAAAAAADZ/wYAAAAAAAAAAADY/wYAAAAAAAAAAADX/wYAAAAAAAAAAADW/wYAAAAAAAAAAADV/wYAAAAAAAAAAADU/wYAAAAAAAAAAADT/wYAAAAAAAAAAADS/wYAAAAAAAAAAADR/wYAAAAAAAAAAADQ/wYAAAAAAAAAAADP/wYAAAAAAAAAAADO/wYAAAAAAAAAAADN/wYAAAAAAAAAAADM/wYAAAAAAAAAAADL/wYAAAAAAAAAAAAKAAYAAAAAAAAAAAALAAYAAAAAAAAAAAAMAAYAAAAAAAAAAAANAAYAAAAAAAAAAAAOAAYAAAAAAAAAAAAPAAYAAAAAAAAAAAAQAAYAAAAAAAAAAAARAAYAAAAAAAAAAAASAAYAAAAAAAAAAAATAAYAAAAAAAAAAAAUAAYAAAAAAAAAAAAVAAYAAAAAAAAAAAAWAAYAAAAAAAAAAAAXAAYAAAAAAAAAAAAYAAYAAAAAAAAAAAAZAAYAAAAAAAAAAAAaAAYAAAAAAAAAAAAbAAYAAAAAAAAAAAAgAAYAAAAAAAAAAAAfAAYAAAAAAAAAAAAeAAYAAAAAAAAAAAAdAAYAAAAAAAAAAAAcAAYAAAAAAAAAAAAhAAYAAAAAAAAAAAAiAAYAAAAAAAAAAAAjAAYAAAAAAAAAAAAkAAYAAAAAAAAAAAAlAAYAAAAAAAAAAAAmAAYAAAAAAAAAAAAnAAYAAAAAAAAAAAAoAAYAAAAAAAAAAAA=")
 tile_set = ExtResource("2_2r7dy")
 
 [node name="Parallax2D2" type="Parallax2D" parent="."]
+visible = false
 scale = Vector2(2, 2)
 scroll_scale = Vector2(1.5, 1.5)
 repeat_size = Vector2(672, 0)
