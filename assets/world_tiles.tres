@@ -1,12 +1,9 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://kbhst3ledd6r"]
+[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://kbhst3ledd6r"]
 
 [ext_resource type="Texture2D" uid="uid://dxhwewbmu3wbb" path="res://assets/world_tileset.png" id="1_is70k"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_5lbeo"]
 tile_data = PackedInt32Array(0, 0, 9, 65536, 0, 9, 131072, 0, 9, 196608, 0, 9, 262144, 0, 9, 327680, 0, 9, 393216, 0, 10, 458752, 0, 11, 524288, 0, 11, 589824, 0, 11, 655360, 0, 11, 720896, 0, 11, 786432, 0, 11, 851968, 0, 11, 917504, 0, 12, 983040, 0, 13, 1048576, 0, 13, 1114112, 0, 13, 1179648, 0, 13, 1245184, 0, 13, 1310720, 0, 13, 1376256, 0, 13, 1441792, 0, 14, 1507328, 0, 15, 1572864, 0, 15, 1638400, 0, 15, 1703936, 0, 15, 1769472, 0, 15, 1835008, 0, 15)
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qji6n"]
-friction = 0.9
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fpprl"]
 texture = ExtResource("1_is70k")
@@ -16,6 +13,7 @@ texture = ExtResource("1_is70k")
 2:0/0 = 0
 3:0/0 = 0
 4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:0/0 = 0
 6:0/0 = 0
 7:0/0 = 0
@@ -136,6 +134,5 @@ texture = ExtResource("1_is70k")
 
 [resource]
 physics_layer_0/collision_layer = 1
-physics_layer_0/physics_material = SubResource("PhysicsMaterial_qji6n")
-sources/0 = SubResource("TileSetAtlasSource_fpprl")
+sources/1 = SubResource("TileSetAtlasSource_fpprl")
 pattern_0 = SubResource("TileMapPattern_5lbeo")
