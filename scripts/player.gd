@@ -15,5 +15,4 @@ func _physics_process(delta: float) -> void:
 	if direction: velocity.x = direction * SPEED
 	elif slip: velocity.x = lerp(velocity.x, 0.0, 0.1)
 	else: velocity.x = 0
-	print("P",slip)
 	move_and_slide()
