@@ -4,7 +4,8 @@ extends Node2D
 @onready var p = $Player
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	#T.update("res://scenes/level_1.tscn")
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -14,3 +15,6 @@ func _process(delta: float) -> void:
 	if (id == null): p.slip = false
 	elif (id.terrain == 0): p.slip = true
 	else: p.slip = false
+
+func _on_end_body_entered(body: Node) -> void:
+	T.reset()
