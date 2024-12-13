@@ -17,4 +17,4 @@ func _process(delta: float) -> void:
 	else: p.slip = false
 
 func _on_end_body_entered(body: Node) -> void:
-	T.reset()
+	T.next()
