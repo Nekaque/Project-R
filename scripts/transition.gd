@@ -4,7 +4,7 @@ extends CanvasLayer
 @onready var fade = $ColorRect
 const TIME = 0.5
 var level = 0
-var levels = ["res://scenes/level_1.tscn", "res://scenes//level_2.tscn"]
+var levels = ["res://scenes/level_1.tscn", "res://scenes//level_2.tscn", "res://scenes//level_3.tscn"]
 func _ready() -> void:
 	fade.color = Color("black",0)
 
