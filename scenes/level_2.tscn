@@ -23,16 +23,22 @@ tile_map_data = PackedByteArray("AADr//T/AAABAAAAAADs//T/AAABAAAAAADt//T/AAABAAA
 tile_set = ExtResource("1_qaog3")
 
 [node name="Player" parent="." instance=ExtResource("2_i51wp")]
+modulate = Color(0.0885598, 0.08856, 0.0885599, 1)
 position = Vector2(640, 360)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(2, 2)
+[node name="light" type="PointLight2D" parent="Player"]
+energy = 5.77
+shadow_color = Color(0.0768358, 0.0768358, 0.0768358, 0)
+texture = SubResource("GradientTexture2D_6fysy")
 
 [node name="PointLight2D" type="PointLight2D" parent="Player"]
 energy = 5.77
 shadow_enabled = true
-shadow_color = Color(0.0768358, 0.0768358, 0.0768358, 0)
+shadow_color = Color(0, 0, 0, 1)
 texture = SubResource("GradientTexture2D_6fysy")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2, 2)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 modulate = Color(0.0562916, 0.0562916, 0.0562916, 1)
