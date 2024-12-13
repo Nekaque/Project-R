@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 @onready var tm = $PlayArea
 @onready var p = $Player
@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 	if (id == null): p.slip = false
 	elif (id.terrain == 0): p.slip = true
 	else: p.slip = false
+	if Input.is_action_just_pressed("trans"): T.next()
 
 func _on_end_body_entered(body: Node) -> void:
-	print(body.name)
 	T.next()
