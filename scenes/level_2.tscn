@@ -6,12 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://bm4vulvtxxlyo" path="res://assets/light.tres" id="3_hba46"]
 [ext_resource type="TileSet" uid="uid://kbhst3ledd6r" path="res://assets/player_area.tres" id="3_rwlha"]
 
-[sub_resource type="Gradient" id="Gradient_kvy7i"]
+[sub_resource type="Gradient" id="Gradient_chljp"]
 offsets = PackedFloat32Array(0, 0.753036, 1)
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_6l516"]
-gradient = SubResource("Gradient_kvy7i")
+gradient = SubResource("Gradient_chljp")
 fill_from = Vector2(0.457265, 0.978632)
 fill_to = Vector2(0.465812, 0)
 
