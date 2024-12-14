@@ -16,10 +16,10 @@ func _physics_process(delta: float) -> void:
 	if direction != 0:
 		velocity.x = direction * speed
 		sprite.animation = "walking"
-	elif slip: velocity.x = lerp(velocity.x, 0.0, 0.03)
 	else:
 		sprite.animation = "idle"
-		velocity.x = 0
+		if slip: velocity.x = lerp(velocity.x, 0.0, 0.03)
+		else: velocity.x = 0
 	if not is_on_floor():
 		velocity += get_gravity() * delta * gravity
 		sprite.animation = "jump"
