@@ -12,7 +12,7 @@ var levels = ["res://scenes/level_1.tscn", "res://scenes//level_2.tscn", "res://
 func _ready() -> void:
 	fade.color = Color("black",0)
 	sfx.volume_db = -20
-	music.volume_db = -25
+	music.volume_db = -80
 	play_music("res://assets/sounds/mybrother.ogg")
 
 func reset():

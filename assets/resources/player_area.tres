@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=7 format=3 uid="uid://kbhst3ledd6r"]
 
-[ext_resource type="Texture2D" uid="uid://dxhwewbmu3wbb" path="res://assets/images/world_tileset.png" id="1_is70k"]
+[ext_resource type="Texture2D" uid="uid://dxhwewbmu3wbb" path="res://assets/images/world_tileset.png" id="1_0m3nq"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_5lbeo"]
 tile_data = PackedInt32Array(0, 0, 9, 65536, 0, 9, 131072, 0, 9, 196608, 0, 9, 262144, 0, 9, 327680, 0, 9, 393216, 0, 10, 458752, 0, 11, 524288, 0, 11, 589824, 0, 11, 655360, 0, 11, 720896, 0, 11, 786432, 0, 11, 851968, 0, 11, 917504, 0, 12, 983040, 0, 13, 1048576, 0, 13, 1114112, 0, 13, 1179648, 0, 13, 1245184, 0, 13, 1310720, 0, 13, 1376256, 0, 13, 1441792, 0, 14, 1507328, 0, 15, 1572864, 0, 15, 1638400, 0, 15, 1703936, 0, 15, 1769472, 0, 15, 1835008, 0, 15)
@@ -15,7 +15,7 @@ polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fpprl"]
-texture = ExtResource("1_is70k")
+texture = ExtResource("1_0m3nq")
 0:0/0 = 0
 0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_jfuym")
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -30,8 +30,11 @@ texture = ExtResource("1_is70k")
 7:0/0 = 0
 8:0/0 = 0
 9:0/0 = 0
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -5.5, 8, -0.25, -8, -1.875)
 10:0/0 = 0
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5.5, 8, -5.5, 8, -0.25, -8, -0.125)
 11:0/0 = 0
+11:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5.5, 8, -8, 8, -2.625, -8, -0.125)
 0:1/0 = 0
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:1/0 = 0

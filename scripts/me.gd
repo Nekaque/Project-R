@@ -9,14 +9,14 @@ var gravity = 1
 
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("left", "right")
-	if direction >= 0: sprite.flip_h = true
-	else: sprite.flip_h = false
+	if direction > 0: sprite.flip_h = true
+	elif direction < 0: sprite.flip_h = false
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-	if direction:
+	if direction != 0:
 		velocity.x = direction * speed
 		sprite.animation = "walking"
-	elif slip: velocity.x = lerp(velocity.x, 0.0, 0.1)
+		if slip: velocity.x = lerp(velocity.x, 0.0, 0.1)
 	else:
 		sprite.animation = "idle"
 		velocity.x = 0

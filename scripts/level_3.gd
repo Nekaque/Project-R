@@ -21,13 +21,11 @@ func _on_water_body_entered(body: Node2D) -> void:
 	particle.position = p.position + Vector2(0,20)
 	particle.emitting = true
 	GM.play_sound(splash)
-	print("wet")
 	wet.visible = true
 	in_water = true
 
 
 func _on_water_body_exited(body: Node2D) -> void:
-	print("out")
 	particle.position = p.position  + Vector2(0,24)
 	particle.emitting = true
 	GM.play_sound(splash)
@@ -43,3 +41,4 @@ func _on_water_body_exited(body: Node2D) -> void:
 
 func _on_end_body_entered(body: Node2D) -> void:
 	GM.next()
+	

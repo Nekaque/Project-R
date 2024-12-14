@@ -11,9 +11,9 @@ region = Rect2(0, 0, 32, 64)
 atlas = ExtResource("2_w4xf8")
 region = Rect2(32, 0, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t3df4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_iv6w5"]
 atlas = ExtResource("2_w4xf8")
-region = Rect2(32, 0, 32, 64)
+region = Rect2(0, 64, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h1shv"]
 atlas = ExtResource("2_w4xf8")
@@ -42,7 +42,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_t3df4")
+"texture": SubResource("AtlasTexture_iv6w5")
 }],
 "loop": true,
 "name": &"jump",
@@ -77,7 +77,7 @@ script = ExtResource("1_mtprm")
 sprite_frames = SubResource("SpriteFrames_7juhu")
 animation = &"walking"
 autoplay = "idle"
-frame_progress = 0.779811
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.25)
