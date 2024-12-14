@@ -18,18 +18,50 @@ tile_map_data = PackedByteArray("AAAAABEAAAAAAAAAAAABABEAAAAAAAAAAAACABEAAAAAAAA
 tile_set = ExtResource("1_oa1lq")
 
 [node name="Find" type="Button" parent="."]
-offset_left = 422.0
-offset_top = 183.0
-offset_right = 430.0
-offset_bottom = 191.0
-text = "NICE"
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -227.0
+offset_top = -139.5
+offset_right = 227.0
+offset_bottom = -48.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 60
+text = "LET'S FIND OUT"
 
 [node name="Exit" type="Button" parent="."]
-offset_left = 427.0
-offset_top = 262.0
-offset_right = 473.0
-offset_bottom = 293.0
-text = "NOO"
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -2.5
+offset_right = 70.0
+offset_bottom = 88.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "NAH"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -436.5
+offset_right = 436.5
+offset_bottom = 201.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 72
+text = "IN SEARCH OF
+THE GREATEST TREASURE"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Find" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Exit" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
