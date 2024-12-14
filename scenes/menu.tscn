@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=4 uid="uid://bbr2gv5l4gd25"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_kbcnm"]
-[ext_resource type="TileSet" uid="uid://dsy22y1lauxjo" path="res://assets/parallax.tres" id="1_oa1lq"]
+[ext_resource type="TileSet" uid="uid://dsy22y1lauxjo" path="res://assets/resources/parallax.tres" id="1_oa1lq"]
 
 [node name="Menu" type="CanvasLayer"]
 layer = 0

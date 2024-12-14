@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=4 uid="uid://dpmun60p34gq1"]
 
 [ext_resource type="Script" path="res://scripts/level_3.gd" id="1_u01r8"]
-[ext_resource type="TileSet" uid="uid://kbhst3ledd6r" path="res://assets/player_area.tres" id="1_vcu1s"]
-[ext_resource type="TileSet" uid="uid://dsy22y1lauxjo" path="res://assets/parallax.tres" id="2_qnaea"]
+[ext_resource type="TileSet" uid="uid://kbhst3ledd6r" path="res://assets/resources/player_area.tres" id="1_vcu1s"]
+[ext_resource type="TileSet" uid="uid://dsy22y1lauxjo" path="res://assets/resources/parallax.tres" id="2_qnaea"]
 [ext_resource type="PackedScene" uid="uid://blecki1e2xtkf" path="res://scenes/player.tscn" id="3_uufg5"]
-[ext_resource type="Texture2D" uid="uid://bt04r8p15fpvq" path="res://assets/wet.png" id="5_fl7im"]
+[ext_resource type="Texture2D" uid="uid://bt04r8p15fpvq" path="res://assets/images/wet.png" id="5_fl7im"]
 
 [sub_resource type="Curve" id="Curve_352gs"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -73,8 +73,8 @@ collision_layer = 3
 
 [node name="Wet" type="Sprite2D" parent="Player"]
 visible = false
-position = Vector2(0, -69)
-scale = Vector2(0.28125, 0.28125)
+position = Vector2(-1, -44)
+scale = Vector2(0.0784416, 0.0784416)
 texture = ExtResource("5_fl7im")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]

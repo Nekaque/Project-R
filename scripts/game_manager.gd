@@ -5,8 +5,15 @@ extends CanvasLayer
 const TIME = 0.5
 var level = 0
 var levels = ["res://scenes/level_1.tscn", "res://scenes//level_2.tscn", "res://scenes//level_3.tscn"]
+@onready var sfx = $SFX
+@onready var music = $Music
+
+
 func _ready() -> void:
 	fade.color = Color("black",0)
+	sfx.volume_db = -10
+	music.volume_db = -10
+	play_music("res://assets/sounds/mybrother.ogg")
 
 func reset():
 	update()
@@ -28,3 +35,12 @@ func update():
 func next():
 	level+=1
 	reset()
+	
+func play_sound(name):
+	sfx.stream = load(name) as AudioStream
+	sfx.play()
+
+func play_music(name):
+	music.stream = load(name) as AudioStream
+	music.play()
+	
