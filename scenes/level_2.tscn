@@ -20,12 +20,12 @@ fill_to = Vector2(0.465812, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f5gus"]
 size = Vector2(76.5, 170.438)
 
-[sub_resource type="Gradient" id="Gradient_kq4h0"]
+[sub_resource type="Gradient" id="Gradient_hlrtn"]
 offsets = PackedFloat32Array(0, 0.267206, 1)
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_wt2ip"]
-gradient = SubResource("Gradient_kq4h0")
+gradient = SubResource("Gradient_hlrtn")
 fill_from = Vector2(0.397436, 0)
 fill_to = Vector2(0.401709, 1)
 
@@ -52,7 +52,6 @@ tile_set = ExtResource("3_rwlha")
 modulate = Color(0.366595, 0.366595, 0.366595, 1)
 light_mask = 0
 position = Vector2(503, 198)
-collision_layer = 1
 
 [node name="light" type="PointLight2D" parent="Player"]
 scale = Vector2(8.71447, 8.71447)
@@ -99,6 +98,7 @@ shape = SubResource("WorldBoundaryShape2D_p5wg0")
 [node name="End" type="Area2D" parent="."]
 position = Vector2(1726, 671)
 rotation = -1.5708
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
 position = Vector2(15.75, -39.5)
