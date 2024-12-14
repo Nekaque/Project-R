@@ -14,10 +14,10 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("trans"): GM.next()
 
 func _on_water_body_entered(body: Node2D) -> void:
-	p.slip = 0.1
+	p.slip = true
 	p.gravity = 0.1
 	p.velocity.y = 50
-	p.speed = 100
+	p.speed = 150
 	particle.position = p.position + Vector2(0,20)
 	particle.emitting = true
 	GM.play_sound(splash)
@@ -30,7 +30,7 @@ func _on_water_body_exited(body: Node2D) -> void:
 	particle.emitting = true
 	GM.play_sound(splash)
 	p.gravity = 1
-	var timer = get_tree().create_timer(2)
+	var timer = get_tree().create_timer(3)
 	in_water = false
 	await  timer.timeout
 	if !in_water:

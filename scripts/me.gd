@@ -16,7 +16,7 @@ func _physics_process(delta: float) -> void:
 	if direction != 0:
 		velocity.x = direction * speed
 		sprite.animation = "walking"
-		if slip: velocity.x = lerp(velocity.x, 0.0, 0.1)
+	elif slip: velocity.x = lerp(velocity.x, 0.0, 0.03)
 	else:
 		sprite.animation = "idle"
 		velocity.x = 0
