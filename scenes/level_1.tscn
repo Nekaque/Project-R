@@ -10,12 +10,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nhpq1"]
 size = Vector2(45, 170.438)
 
-[sub_resource type="Gradient" id="Gradient_ggikg"]
+[sub_resource type="Gradient" id="Gradient_46b4n"]
 offsets = PackedFloat32Array(0, 0.267206, 1)
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_hk303"]
-gradient = SubResource("Gradient_ggikg")
+gradient = SubResource("Gradient_46b4n")
 fill_from = Vector2(0.397436, 0)
 fill_to = Vector2(0.401709, 1)
 
@@ -71,7 +71,6 @@ tile_set = ExtResource("4_s6knh")
 
 [node name="End" type="Area2D" parent="."]
 position = Vector2(1879, 328)
-collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
 position = Vector2(0, -39.5)
