@@ -3,6 +3,7 @@ extends Node
 @onready var p = $Player
 @onready var wet = $Player/Wet
 @onready var particle = $Splash
+var in_water = false
 var splash = "res://assets/sounds/splash.wav"
 func _ready() -> void:
 	var tween = get_tree().create_tween()
@@ -17,6 +18,7 @@ func _on_water_body_entered(body: Node2D) -> void:
 	GM.play_sound(splash)
 	print("wet")
 	wet.visible = true
+	in_water = true
 
 
 func _on_water_body_exited(body: Node2D) -> void:
@@ -26,6 +28,8 @@ func _on_water_body_exited(body: Node2D) -> void:
 	GM.play_sound(splash)
 	p.gravity = 1
 	var timer = get_tree().create_timer(2)
+	in_water = false
 	await  timer.timeout
-	p.slip = 0
-	wet.visible = false
+	if !in_water:
+		p.slip = 0
+		wet.visible = false
