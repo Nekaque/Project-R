@@ -16,6 +16,13 @@ func _input(event: InputEvent) -> void:
 		current_letter = 0
 		if (dialog >= len(dialogues)):
 			stopped = false
+			klara.dir = 0.5
+			$Klara/Sprite2D.flip_h = true
+			$Klara/Camera2D.visible = true
+			var timer = get_tree().create_timer(0.8)
+			p.dir = 0.5
+			await timer.timeout
+			klara.dir = 0
 			klara.controlable = true
 			lab.visible = false
 			var tween = get_tree().create_tween()
@@ -51,9 +58,12 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 
 func _on_bad_body_entered(body: Node2D) -> void:
-	GM.bad_ending()
+	if (body.name != "Me"): GM.bad_ending()
 
 
 func _on_good_body_entered(body: Node2D) -> void:
-	print(body.name)
-	GM.good_ending()
+	if (body.name == "Me"):
+		var timer = get_tree().create_timer(0.5)
+		await timer.timeout
+		body.queue_free()
+	else: GM.good_ending()

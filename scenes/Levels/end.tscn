@@ -28,7 +28,7 @@ fill_from = Vector2(0.397436, 0)
 fill_to = Vector2(0.401709, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e75l4"]
-size = Vector2(76.5, 105.153)
+size = Vector2(76.5, 42.3604)
 
 [sub_resource type="Gradient" id="Gradient_hlrtn"]
 offsets = PackedFloat32Array(0, 0.348178, 0.838057)
@@ -51,6 +51,7 @@ tile_set = ExtResource("2_3bclt")
 
 [node name="Me" parent="." instance=ExtResource("3_72kgq")]
 position = Vector2(14, 460)
+collision_layer = 6
 
 [node name="Camera2D" type="Camera2D" parent="Me"]
 zoom = Vector2(2, 2)
@@ -78,8 +79,14 @@ tile_set = ExtResource("4_1vbe8")
 
 [node name="Klara" parent="." instance=ExtResource("5_k3wxq")]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(402, 363)
+position = Vector2(391, 360)
 collision_layer = 4
+
+[node name="Camera2D" type="Camera2D" parent="Klara"]
+visible = false
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_right = 688
 
 [node name="Chest" type="Area2D" parent="."]
 position = Vector2(387, 380)
@@ -127,7 +134,7 @@ rotation = -1.5708
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Good"]
-position = Vector2(0, 32.7501)
+position = Vector2(6.10352e-05, 64.2501)
 scale = Vector2(1, 1.0033)
 shape = SubResource("RectangleShape2D_e75l4")
 

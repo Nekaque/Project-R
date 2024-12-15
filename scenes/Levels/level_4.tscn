@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://bm0rrdedvin6a"]
+[gd_scene load_steps=22 format=4 uid="uid://bm0rrdedvin6a"]
 
 [ext_resource type="Script" path="res://scripts/levels/level_4.gd" id="1_q2t7r"]
 [ext_resource type="TileSet" uid="uid://dsy22y1lauxjo" path="res://assets/resources/parallax.tres" id="2_yjv01"]
@@ -53,6 +53,16 @@ size = Vector2(49, 44)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2mnk"]
 size = Vector2(96, 46)
+
+[sub_resource type="Gradient" id="Gradient_si4ko"]
+offsets = PackedFloat32Array(0, 0.582996, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1r2rs"]
+gradient = SubResource("Gradient_si4ko")
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 1)
 
 [node name="Level 4" type="Node"]
 script = ExtResource("1_q2t7r")
@@ -233,6 +243,12 @@ position = Vector2(1081, 356)
 scale = Vector2(0.808065, 0.808065)
 energy = 10.0
 texture = ExtResource("4_qscps")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(103, 497)
+scale = Vector2(1.15625, 1.125)
+energy = 5.8
+texture = SubResource("GradientTexture2D_1r2rs")
 
 [connection signal="body_entered" from="End" to="." method="_on_end_body_entered"]
 [connection signal="body_entered" from="Lava" to="." method="_on_lava_body_entered"]

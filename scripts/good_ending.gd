@@ -8,14 +8,9 @@ func _ready() -> void:
 	$Klara/Sprite2D.flip_h = true
 	p.gravity = 1
 	p.controlable = false
-	p.dir = 1
-	klara.dir = 1
+	p.dir = 0.5
+	klara.dir = 0.5
 	var timer = get_tree().create_timer(0.5)
 	await timer.timeout
 	p.ending = true
 	klara.ending = true
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	#cam.position.x += 200*delta
-	pass
