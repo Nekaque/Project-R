@@ -4,7 +4,8 @@ extends CanvasLayer
 @onready var fade = $ColorRect
 const TIME = 0.5
 var level = 0
-var levels = ["res://scenes/level_1.tscn", "res://scenes//level_2.tscn", "res://scenes//level_3.tscn", "res://scenes//level_4.tscn", "res://scenes//level_5.tscn", "res://scenes//end.tscn"]
+var prefix = "res://scenes/levels/"
+var levels = ["level_1.tscn", "level_2.tscn", "level_3.tscn", "level_4.tscn", "level_5.tscn", "end.tscn"]
 @onready var sfx = $SFX
 @onready var music = $Music
 
@@ -19,7 +20,7 @@ func reset():
 	update()
 	var timer = get_tree().create_timer(TIME)
 	await timer.timeout
-	get_tree().change_scene_to_file(levels[level])
+	get_tree().change_scene_to_file(prefix+levels[level])
 	update()
 	
 func update():

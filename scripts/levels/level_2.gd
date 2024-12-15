@@ -9,5 +9,4 @@ func _process(delta: float) -> void:
 
 
 func _on_end_body_entered(body: Node2D) -> void:
-	print(body.name)
 	GM.next()
