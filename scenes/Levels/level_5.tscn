@@ -24,11 +24,11 @@ fill_to = Vector2(0.401709, 1)
 script = ExtResource("1_audmq")
 
 [node name="Black" type="ColorRect" parent="."]
-offset_left = 66.0
-offset_top = -260.0
-offset_right = 1346.0
-offset_bottom = 460.0
-scale = Vector2(1.01099, 1.39399)
+offset_left = 258.0
+offset_top = -402.0
+offset_right = 1538.0
+offset_bottom = 318.0
+scale = Vector2(1.0774, 1.65936)
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 

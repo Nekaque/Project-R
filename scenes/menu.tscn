@@ -60,7 +60,7 @@ offset_bottom = 300.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 64
-text = "SEARCH OF THE GREATEST TREASURE"
+text = "SEARCH FOR THE GREATEST TREASURE"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="Find" to="." method="_on_button_pressed"]
