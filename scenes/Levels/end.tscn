@@ -72,4 +72,13 @@ texture = ExtResource("7_n10fx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Chest"]
 shape = SubResource("RectangleShape2D_n5awy")
 
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 360.0
+offset_top = 276.0
+offset_right = 400.0
+offset_bottom = 299.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Skibidi"
+
 [connection signal="body_entered" from="Chest" to="." method="_on_area_2d_body_entered"]
