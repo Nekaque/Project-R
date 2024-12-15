@@ -25,4 +25,11 @@ func _physics_process(delta: float) -> void:
 		if not is_on_floor():
 			velocity += get_gravity() * delta * gravity
 			sprite.animation = "jump"
-		move_and_slide()
+	else:
+		sprite.animation = "idle"
+		velocity.x = 0
+		if not is_on_floor():
+			velocity += get_gravity() * delta * gravity
+			sprite.animation = "jump"
+		
+	move_and_slide()

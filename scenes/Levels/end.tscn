@@ -55,7 +55,7 @@ tile_set = ExtResource("4_1vbe8")
 
 [node name="Klara" parent="." instance=ExtResource("5_k3wxq")]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(387, 364)
+position = Vector2(402, 363)
 collision_layer = 2
 
 [node name="Chest" type="Area2D" parent="."]
