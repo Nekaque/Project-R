@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://dgn1gj1nh61o1"]
+[gd_scene load_steps=17 format=4 uid="uid://dgn1gj1nh61o1"]
 
 [ext_resource type="Script" path="res://scripts/end.gd" id="1_bhb2e"]
 [ext_resource type="TileSet" uid="uid://dsy22y1lauxjo" path="res://assets/resources/parallax.tres" id="2_3bclt"]
@@ -15,6 +15,30 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n5awy"]
 size = Vector2(32, 24)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_igx0r"]
+size = Vector2(76.5, 94.6878)
+
+[sub_resource type="Gradient" id="Gradient_oudf3"]
+offsets = PackedFloat32Array(0, 0.267206, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_shw7t"]
+gradient = SubResource("Gradient_oudf3")
+fill_from = Vector2(0.397436, 0)
+fill_to = Vector2(0.401709, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e75l4"]
+size = Vector2(76.5, 105.153)
+
+[sub_resource type="Gradient" id="Gradient_hlrtn"]
+offsets = PackedFloat32Array(0, 0.348178, 0.838057)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.388235, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3ymeh"]
+gradient = SubResource("Gradient_hlrtn")
+fill_from = Vector2(0.397436, 0)
+fill_to = Vector2(0.401709, 1)
+
 [node name="End" type="Node"]
 script = ExtResource("1_bhb2e")
 
@@ -27,7 +51,6 @@ tile_set = ExtResource("2_3bclt")
 
 [node name="Me" parent="." instance=ExtResource("3_72kgq")]
 position = Vector2(14, 460)
-collision_layer = 6
 
 [node name="Camera2D" type="Camera2D" parent="Me"]
 zoom = Vector2(2, 2)
@@ -56,11 +79,11 @@ tile_set = ExtResource("4_1vbe8")
 [node name="Klara" parent="." instance=ExtResource("5_k3wxq")]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(402, 363)
-collision_layer = 2
+collision_layer = 4
 
 [node name="Chest" type="Area2D" parent="."]
 position = Vector2(387, 380)
-collision_mask = 4
+collision_mask = 2
 
 [node name="Locked" type="Sprite2D" parent="Chest"]
 texture = ExtResource("6_auyc5")
@@ -81,4 +104,38 @@ offset_bottom = 299.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Skibidi"
 
+[node name="Bad" type="Area2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(67, 433)
+rotation = 1.5708
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bad"]
+position = Vector2(15.75, -1.49991)
+scale = Vector2(1, 1.0033)
+shape = SubResource("RectangleShape2D_igx0r")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bad"]
+position = Vector2(16.031, 8.59389)
+scale = Vector2(1.21972, 1.80839)
+texture = SubResource("GradientTexture2D_shw7t")
+
+[node name="Good" type="Area2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(596, 354)
+rotation = -1.5708
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Good"]
+position = Vector2(0, 32.7501)
+scale = Vector2(1, 1.0033)
+shape = SubResource("RectangleShape2D_e75l4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Good"]
+position = Vector2(0, 38.1636)
+scale = Vector2(1.21972, 1.8068)
+texture = SubResource("GradientTexture2D_3ymeh")
+
 [connection signal="body_entered" from="Chest" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Bad" to="." method="_on_bad_body_entered"]
+[connection signal="body_entered" from="Good" to="." method="_on_good_body_entered"]

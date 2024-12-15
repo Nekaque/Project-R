@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dckpeulrwpquj"]
+[gd_scene load_steps=11 format=3 uid="uid://dckpeulrwpquj"]
 
 [ext_resource type="Texture2D" uid="uid://ul8fkmkp6epa" path="res://assets/images/KspriteFrame.png" id="1_5mndb"]
 [ext_resource type="Script" path="res://scripts/klara.gd" id="1_78stx"]
@@ -10,6 +10,10 @@ region = Rect2(0, 0, 32, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_iq8pa"]
 atlas = ExtResource("1_5mndb")
 region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7q6vl"]
+atlas = ExtResource("1_5mndb")
+region = Rect2(0, 64, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7yesk"]
 atlas = ExtResource("1_5mndb")
@@ -38,6 +42,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_7q6vl")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_7yesk")
 }, {
 "duration": 1.0,
@@ -62,9 +74,8 @@ script = ExtResource("1_78stx")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_67xrn")
-animation = &"walking"
+animation = &"jump"
 autoplay = "idle"
-frame_progress = 0.773802
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_65r4p")

@@ -4,7 +4,8 @@ extends CharacterBody2D
 var speed = 200.0
 @onready var sprite = $Sprite2D
 var controlable = false
-
+var dir = 0
+var ending = false
 func _physics_process(delta: float) -> void:
 	if controlable:
 		var direction := Input.get_axis("left", "right")
@@ -17,4 +18,14 @@ func _physics_process(delta: float) -> void:
 			velocity.x = 0
 			sprite.animation = "idle"
 		if not is_on_floor(): velocity += get_gravity() * delta
-		move_and_slide()
+	else:
+		if dir != 0:
+			sprite.animation = "walking"
+			velocity.x = dir*speed
+		else:
+			sprite.animation = "idle"
+			velocity.x = 0
+		if not is_on_floor() and not ending:
+			velocity += get_gravity() * delta
+			sprite.animation = "jump"
+	move_and_slide()

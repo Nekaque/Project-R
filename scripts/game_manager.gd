@@ -36,6 +36,20 @@ func update():
 		tween.tween_property(fade,"color:a",1,TIME)
 		shown = true
 
+func bad_ending():
+	update()
+	var timer = get_tree().create_timer(TIME)
+	await timer.timeout
+	get_tree().change_scene_to_file("res://scenes/bad_ending.tscn")
+	update()
+	
+func good_ending():
+	update()
+	var timer = get_tree().create_timer(TIME)
+	await timer.timeout
+	get_tree().change_scene_to_file("res://scenes/good_ending.tscn")
+	update()
+
 func next():
 	level+=1
 	reset()

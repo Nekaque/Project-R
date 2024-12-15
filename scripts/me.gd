@@ -8,6 +8,7 @@ var gravity = 1
 var controlable = true
 var coyote = 0.1
 var dir = 0
+var ending = false
 
 func _physics_process(delta: float) -> void:
 	if controlable:
@@ -36,7 +37,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			sprite.animation = "idle"
 			velocity.x = 0
-		if not is_on_floor():
+		if not is_on_floor() and not ending:
 			velocity += get_gravity() * delta * gravity
 			sprite.animation = "jump"
 		

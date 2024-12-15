@@ -165,6 +165,7 @@ texture = ExtResource("1_0m3nq")
 occlusion_layer_0/light_mask = 1
 occlusion_layer_0/sdf_collision = true
 physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 3
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Slip"
 terrain_set_0/terrain_0/color = Color(0.157076, 0.327409, 0.822739, 1)
