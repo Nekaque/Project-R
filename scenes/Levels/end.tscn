@@ -1,14 +1,19 @@
-[gd_scene load_steps=8 format=4 uid="uid://dgn1gj1nh61o1"]
+[gd_scene load_steps=11 format=4 uid="uid://dgn1gj1nh61o1"]
 
 [ext_resource type="Script" path="res://scripts/end.gd" id="1_bhb2e"]
 [ext_resource type="TileSet" uid="uid://dsy22y1lauxjo" path="res://assets/resources/parallax.tres" id="2_3bclt"]
 [ext_resource type="PackedScene" uid="uid://blecki1e2xtkf" path="res://scenes/player.tscn" id="3_72kgq"]
 [ext_resource type="TileSet" uid="uid://kbhst3ledd6r" path="res://assets/resources/player_area.tres" id="4_1vbe8"]
 [ext_resource type="PackedScene" uid="uid://dckpeulrwpquj" path="res://scenes/klara.tscn" id="5_k3wxq"]
+[ext_resource type="Texture2D" uid="uid://bpc0oiqcqsyna" path="res://assets/images/chest_locked.png" id="6_auyc5"]
+[ext_resource type="Texture2D" uid="uid://bemvuf034h0ld" path="res://assets/images/chest_opened.png" id="7_n10fx"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ytfyc"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rjv84"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5awy"]
+size = Vector2(32, 24)
 
 [node name="End" type="Node"]
 script = ExtResource("1_bhb2e")
@@ -22,6 +27,7 @@ tile_set = ExtResource("2_3bclt")
 
 [node name="Me" parent="." instance=ExtResource("3_72kgq")]
 position = Vector2(14, 460)
+collision_layer = 6
 
 [node name="Camera2D" type="Camera2D" parent="Me"]
 zoom = Vector2(2, 2)
@@ -48,5 +54,22 @@ tile_map_data = PackedByteArray("AADr/wkAAAAGAAEAAADr/wgAAAAGAAEAAADr/wcAAAAGAAE
 tile_set = ExtResource("4_1vbe8")
 
 [node name="Klara" parent="." instance=ExtResource("5_k3wxq")]
-position = Vector2(492, 363)
+modulate = Color(1, 1, 1, 0)
+position = Vector2(387, 364)
 collision_layer = 2
+
+[node name="Chest" type="Area2D" parent="."]
+position = Vector2(387, 380)
+collision_mask = 4
+
+[node name="Locked" type="Sprite2D" parent="Chest"]
+texture = ExtResource("6_auyc5")
+
+[node name="Opened" type="Sprite2D" parent="Chest"]
+visible = false
+texture = ExtResource("7_n10fx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chest"]
+shape = SubResource("RectangleShape2D_n5awy")
+
+[connection signal="body_entered" from="Chest" to="." method="_on_area_2d_body_entered"]
