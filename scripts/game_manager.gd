@@ -16,6 +16,9 @@ func _ready() -> void:
 	music.volume_db = -80
 	play_music("res://assets/sounds/mybrother.ogg")
 
+func _input(event: InputEvent) -> void:
+	if (event.is_action_pressed("trans")):next()
+
 func reset():
 	update()
 	var timer = get_tree().create_timer(TIME)
