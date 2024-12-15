@@ -1,9 +1,15 @@
 extends Node
 
+@onready var p = $Me
+func _ready() -> void:
 
-#func _ready() -> void:
-	#var tween = get_tree().create_tween()
-	#tween.tween_property($Start, "modulate:a", 0, 1)
+	var tween = get_tree().create_tween()
+	tween.tween_property($Start, "modulate:a", 0, 1)
+	p.controlable = false
+	p.dir = 1
+	var timer = get_tree().create_timer(0.8)
+	await  timer.timeout
+	p.controlable = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

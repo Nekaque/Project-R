@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://kbhst3ledd6r"]
+[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://kbhst3ledd6r"]
 
 [ext_resource type="Texture2D" uid="uid://dxhwewbmu3wbb" path="res://assets/images/world_tileset.png" id="1_0m3nq"]
 
@@ -12,6 +12,9 @@ polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rew4c"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_irt7i"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fpprl"]
@@ -46,6 +49,7 @@ texture = ExtResource("1_0m3nq")
 4:1/0 = 0
 5:1/0 = 0
 6:1/0 = 0
+6:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_irt7i")
 6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:1/0 = 0
 8:1/0 = 0
