@@ -6,7 +6,7 @@ var slip = false
 var gravity = 1
 @onready var sprite = $Sprite2D
 var controlable = true
-var coyote = 0.15
+var coyote = 0.0
 var dir = 0
 var ending = false
 var walking = false
@@ -21,8 +21,9 @@ func _physics_process(delta: float) -> void:
 		dir = Input.get_axis("left", "right")
 		if is_on_floor():
 			coyote = 0.15
-		if Input.is_action_just_pressed("jump") and coyote >= 0:
+		if Input.is_action_pressed("jump") and coyote >= 0:
 			velocity.y = jump_velocity
+			coyote = 0
 			$Jump.stream =  load("res://assets/sounds/hop.wav") as AudioStream
 			$Jump.play()
 		if dir != 0:
