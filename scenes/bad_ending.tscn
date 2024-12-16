@@ -16,7 +16,7 @@ offset_left = -62.5
 offset_right = 62.5
 offset_bottom = 23.0
 grow_horizontal = 2
-text = "MISSION FAILED"
+text = "TADY BUDE NEJAKEJ TEXT"
 
 [node name="Credits" type="Label" parent="."]
 anchors_preset = 8
@@ -30,4 +30,4 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "DESPITE OF EFFORT OF MANY OTHERS"
+text = "DALSI TEXT"

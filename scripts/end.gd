@@ -4,7 +4,8 @@ extends Node
 @onready var klara = $Klara
 @onready var lab = $Label
 var dialog = 0
-var dialogues = ["amogus", "skibidi", "Rise of the Rizzlers 4: The revenge of Ohio", "test, zda funguje dynamicky", "mega nice"]
+var dialogues = ["zmáčkni mezerník pro další", "tady budou nejake kecy",
+	"dalsi kecy", "pujdes se mnou na rande?", "musim si to promyslet", "jasne, pujdu napred"]
 var current_letter = 0
 var stopped = false
 var elapsed = 0

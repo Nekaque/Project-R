@@ -35,7 +35,7 @@ offset_right = 111.5
 offset_bottom = -63.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "DESPITE ME BEING A RETARD"
+text = "DALSI TEXT"
 
 [node name="Camera2D" type="Camera2D" parent="Klara"]
 zoom = Vector2(2.5, 2.5)
@@ -50,7 +50,7 @@ offset_right = 65.5
 offset_bottom = -112.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "MISSION PASSED"
+text = "NEJAKEJ TEXT"
 
 [node name="Me" parent="." instance=ExtResource("4_a43t7")]
 z_index = 1
