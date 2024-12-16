@@ -42,6 +42,7 @@ func bad_ending():
 	var timer = get_tree().create_timer(TIME)
 	await timer.timeout
 	get_tree().change_scene_to_file("res://scenes/bad_ending.tscn")
+	play_music("res://assets/sounds/bad.ogg")
 	update()
 	
 func good_ending():

@@ -39,7 +39,7 @@ grow_vertical = 2
 text = "DESPITE ME BEING A RETARD"
 
 [node name="Camera2D" type="Camera2D" parent="Klara"]
-zoom = Vector2(2, 2)
+zoom = Vector2(2.5, 2.5)
 
 [node name="Passed" type="Label" parent="Klara"]
 anchors_preset = 5

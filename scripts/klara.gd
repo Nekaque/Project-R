@@ -11,6 +11,7 @@ func _physics_process(delta: float) -> void:
 		var direction := Input.get_axis("left", "right")
 		if Input.is_action_pressed("jump") and is_on_floor():
 			velocity.y = -350.0
+			sprite.animation = "jump"
 		if direction > 0: sprite.flip_h = true
 		elif direction < 0: sprite.flip_h = false
 		if direction != 0:
