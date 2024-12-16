@@ -13,8 +13,8 @@ var levels = ["level_1.tscn", "level_2.tscn", "level_3.tscn", "level_4.tscn", "l
 func _ready() -> void:
 	fade.color = Color("black",0)
 	sfx.volume_db = -20
-	music.volume_db = -80
-	play_music("res://assets/sounds/mybrother.ogg")
+	music.volume_db = -20
+	play_music("res://assets/sounds/XRE.ogg")
 
 func _input(event: InputEvent) -> void:
 	if (event.is_action_pressed("trans")): next()
@@ -49,6 +49,7 @@ func good_ending():
 	var timer = get_tree().create_timer(TIME)
 	await timer.timeout
 	get_tree().change_scene_to_file("res://scenes/good_ending.tscn")
+	play_music("res://assets/sounds/good.ogg")
 	update()
 
 func next():
@@ -61,4 +62,8 @@ func play_sound(name):
 
 func play_music(name):
 	music.stream = load(name) as AudioStream
+	music.play()
+
+
+func _on_music_finished() -> void:
 	music.play()

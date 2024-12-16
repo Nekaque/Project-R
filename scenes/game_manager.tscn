@@ -14,3 +14,5 @@ color = Color(0, 0, 0, 1)
 [node name="SFX" type="AudioStreamPlayer" parent="."]
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
+
+[connection signal="finished" from="Music" to="." method="_on_music_finished"]
