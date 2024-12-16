@@ -15,6 +15,7 @@ func _on_water_body_entered(body: Node2D) -> void:
 	p.gravity = 0.1
 	p.velocity.y = 50
 	p.speed = 100
+	p.jump_velocity = -200
 	particle.position = p.position + Vector2(0,10)
 	particle.emitting = true
 	GM.play_sound(splash)
@@ -30,6 +31,7 @@ func _on_water_body_exited(body: Node2D) -> void:
 	p.speed = 150
 	var timer = get_tree().create_timer(2)
 	in_water = false
+	p.jump_velocity = -400
 	await  timer.timeout
 	if !in_water:
 		p.slip = 0
