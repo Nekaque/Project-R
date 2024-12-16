@@ -6,7 +6,7 @@ var slip = false
 var gravity = 1
 @onready var sprite = $Sprite2D
 var controlable = true
-var coyote = 0.1
+var coyote = 0.15
 var dir = 0
 var ending = false
 
@@ -14,7 +14,7 @@ func _physics_process(delta: float) -> void:
 	if controlable:
 		dir = Input.get_axis("left", "right")
 		if is_on_floor():
-			coyote = 0.1
+			coyote = 0.15
 		if Input.is_action_just_pressed("jump") and coyote >= 0:
 			velocity.y = JUMP_VELOCITY
 		if dir != 0:
@@ -24,6 +24,7 @@ func _physics_process(delta: float) -> void:
 			elif dir < 0: sprite.flip_h = false
 		else:
 			sprite.animation = "idle"
+			print("slip: ",slip)
 			if slip: velocity.x = lerp(velocity.x, 0.0, 0.03)
 			else: velocity.x = 0
 		if not is_on_floor():

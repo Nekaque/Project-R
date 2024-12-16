@@ -45,7 +45,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	p.dir = 0
 	$Chest/Locked.visible = false
 	$Chest/Opened.visible = true
-	GM.play_sound("res://assets/sounds/splash.wav")
+	GM.play_sound("res://assets/sounds/chest.wav")
 	p.position = Vector2(368,360)
 	var tween = get_tree().create_tween()
 	tween.set_parallel()

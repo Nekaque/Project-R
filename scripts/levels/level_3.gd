@@ -14,8 +14,8 @@ func _on_water_body_entered(body: Node2D) -> void:
 	p.slip = true
 	p.gravity = 0.1
 	p.velocity.y = 50
-	p.speed = 50
-	particle.position = p.position + Vector2(0,20)
+	p.speed = 100
+	particle.position = p.position + Vector2(0,10)
 	particle.emitting = true
 	GM.play_sound(splash)
 	wet.visible = true
