@@ -18,16 +18,22 @@ func _input(event: InputEvent) -> void:
 			lab.visible = false
 			stopped = false
 			klara.dir = 0.5
+			p.dir = 0.75
 			$Klara/Sprite2D.flip_h = true
 			var timer = get_tree().create_timer(0.8)
-			p.dir = 0.5
-			await timer.timeout
-			klara.dir = 0
-			klara.controlable = true
 			var tween = get_tree().create_tween()
 			tween.set_parallel(true)
 			tween.tween_property($Bad,"modulate:a",1,1)
 			tween.tween_property($Good,"modulate:a",1,1)
+			tween.tween_property($ColorRect,"modulate:a", 0, 1)
+			tween.tween_property(lab,"modulate:a", 0, 1)
+			await timer.timeout
+			klara.dir = 0
+			klara.controlable = true
+			#tween = get_tree().create_tween()
+			#tween.set_parallel(true)
+			#tween.tween_property($Bad,"modulate:a",1,1)
+			#tween.tween_property($Good,"modulate:a",1,1)
 		
 func _process(delta: float) -> void:
 	if (stopped):
@@ -51,6 +57,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	tween.set_parallel()
 	tween.tween_property(klara,"modulate:a", 1, 1)
 	tween.tween_property($Chest,"modulate:a", 0, 1)
+	tween.tween_property($ColorRect,"modulate:a", 1, 1)
+	tween.tween_property(lab,"modulate:a", 1, 1)
 	var timer = get_tree().create_timer(1)
 	await timer.timeout
 	$Chest.queue_free()
