@@ -67,7 +67,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sn76n"]
-size = Vector2(16, 55.5)
+size = Vector2(14, 57)
 
 [node name="Me" type="CharacterBody2D"]
 collision_layer = 2
@@ -77,9 +77,8 @@ script = ExtResource("1_mtprm")
 sprite_frames = SubResource("SpriteFrames_7juhu")
 animation = &"walking"
 autoplay = "idle"
-frame_progress = 0.513976
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.75)
+position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_sn76n")

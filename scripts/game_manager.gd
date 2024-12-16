@@ -61,4 +61,3 @@ func play_sound(name):
 func play_music(name):
 	music.stream = load(name) as AudioStream
 	music.play()
-	
