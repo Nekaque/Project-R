@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 		if not is_on_floor(): velocity += get_gravity() * delta
 	else:
 		if dir != 0:
-			sprite.animation = "walking"
+			sprite.animation = "ending"
 			velocity.x = dir*speed
 		else:
 			sprite.animation = "idle"

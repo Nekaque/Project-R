@@ -32,7 +32,7 @@ func _physics_process(delta: float) -> void:
 			sprite.animation = "jump"
 	else:
 		if dir != 0:
-			sprite.animation = "walking"
+			sprite.animation = "ending"
 			velocity.x = dir*speed
 		else:
 			sprite.animation = "idle"

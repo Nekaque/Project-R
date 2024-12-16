@@ -8,6 +8,7 @@ var dialogues = ["amogus", "skibidi", "Rise of the Rizzlers 4: The revenge of Oh
 var current_letter = 0
 var stopped = false
 var elapsed = 0
+const TIME = 1
 
 func _input(event: InputEvent) -> void:
 	if (event.is_action_pressed("jump") and stopped):
@@ -23,17 +24,14 @@ func _input(event: InputEvent) -> void:
 			var timer = get_tree().create_timer(0.8)
 			var tween = get_tree().create_tween()
 			tween.set_parallel(true)
-			tween.tween_property($Bad,"modulate:a",1,1)
-			tween.tween_property($Good,"modulate:a",1,1)
-			tween.tween_property($ColorRect,"modulate:a", 0, 1)
-			tween.tween_property(lab,"modulate:a", 0, 1)
+			tween.tween_property($Bad,"modulate:a",1,TIME)
+			tween.tween_property($Good,"modulate:a",1,TIME)
+			tween.tween_property($ColorRect,"modulate:a", 0, TIME)
+			tween.tween_property(lab,"modulate:a", 0, TIME)
+			tween.tween_property($Space,"modulate:a",0,TIME)
 			await timer.timeout
 			klara.dir = 0
 			klara.controlable = true
-			#tween = get_tree().create_tween()
-			#tween.set_parallel(true)
-			#tween.tween_property($Bad,"modulate:a",1,1)
-			#tween.tween_property($Good,"modulate:a",1,1)
 		
 func _process(delta: float) -> void:
 	if (stopped):
@@ -55,11 +53,12 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	p.position = Vector2(368,360)
 	var tween = get_tree().create_tween()
 	tween.set_parallel()
-	tween.tween_property(klara,"modulate:a", 1, 1)
-	tween.tween_property($Chest,"modulate:a", 0, 1)
-	tween.tween_property($ColorRect,"modulate:a", 1, 1)
-	tween.tween_property(lab,"modulate:a", 1, 1)
-	var timer = get_tree().create_timer(1)
+	tween.tween_property(klara,"modulate:a", 1, TIME)
+	tween.tween_property($Chest,"modulate:a", 0, TIME)
+	tween.tween_property($ColorRect,"modulate:a", 1, TIME)
+	tween.tween_property(lab,"modulate:a", 1, TIME)
+	tween.tween_property($Space,"modulate:a",1,TIME)
+	var timer = get_tree().create_timer(TIME)
 	await timer.timeout
 	$Chest.queue_free()
 	lab.text = ""

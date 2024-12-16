@@ -3,18 +3,6 @@
 [ext_resource type="Script" path="res://scripts/me.gd" id="1_mtprm"]
 [ext_resource type="Texture2D" uid="uid://cv4aqqgjg3vm1" path="res://assets/images/spriteFrameEyes.png" id="2_qu1wu"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qhemb"]
-atlas = ExtResource("2_qu1wu")
-region = Rect2(0, 0, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rgw2d"]
-atlas = ExtResource("2_qu1wu")
-region = Rect2(32, 0, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lkw2b"]
-atlas = ExtResource("2_qu1wu")
-region = Rect2(0, 64, 32, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_vbqrb"]
 atlas = ExtResource("2_qu1wu")
 region = Rect2(0, 64, 32, 64)
@@ -27,8 +15,37 @@ region = Rect2(0, 0, 32, 64)
 atlas = ExtResource("2_qu1wu")
 region = Rect2(32, 64, 32, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhemb"]
+atlas = ExtResource("2_qu1wu")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgw2d"]
+atlas = ExtResource("2_qu1wu")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkw2b"]
+atlas = ExtResource("2_qu1wu")
+region = Rect2(0, 64, 32, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_7juhu"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbqrb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2i37")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hwhe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2i37")
+}],
+"loop": true,
+"name": &"ending",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qhemb")
@@ -63,7 +80,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walking",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sn76n"]
@@ -75,7 +92,7 @@ script = ExtResource("1_mtprm")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7juhu")
-animation = &"walking"
+animation = &"ending"
 autoplay = "idle"
 flip_h = true
 
