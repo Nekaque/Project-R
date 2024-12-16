@@ -19,7 +19,6 @@ func _input(event: InputEvent) -> void:
 			stopped = false
 			klara.dir = 0.5
 			$Klara/Sprite2D.flip_h = true
-			$Klara/Camera2D.visible = true
 			var timer = get_tree().create_timer(0.8)
 			p.dir = 0.5
 			await timer.timeout
@@ -40,10 +39,13 @@ func _process(delta: float) -> void:
 		else: elapsed+=delta
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	$Klara/Camera2D.visible = true
+	$Me/Camera2D.queue_free()
 	p.controlable = false
 	p.dir = 0
 	$Chest/Locked.visible = false
 	$Chest/Opened.visible = true
+	GM.play_sound("res://assets/sounds/splash.wav")
 	p.position = Vector2(368,360)
 	var tween = get_tree().create_tween()
 	tween.set_parallel()
