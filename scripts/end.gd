@@ -4,7 +4,7 @@ extends Node
 @onready var klara = $Klara
 @onready var lab = $Label
 var dialog = 0
-var dialogues = ["amogus", "skibidi", "Ohio"]
+var dialogues = ["amogus", "skibidi", "Rise of the Rizzlers 4: The revenge of Ohio"]
 var current_letter = 0
 var stopped = false
 var elapsed = 0
@@ -15,6 +15,7 @@ func _input(event: InputEvent) -> void:
 		elapsed = 0.1
 		current_letter = 0
 		if (dialog >= len(dialogues)):
+			lab.visible = false
 			stopped = false
 			klara.dir = 0.5
 			$Klara/Sprite2D.flip_h = true
@@ -24,7 +25,6 @@ func _input(event: InputEvent) -> void:
 			await timer.timeout
 			klara.dir = 0
 			klara.controlable = true
-			lab.visible = false
 			var tween = get_tree().create_tween()
 			tween.set_parallel(true)
 			tween.tween_property($Bad,"modulate:a",1,1)
@@ -33,7 +33,7 @@ func _input(event: InputEvent) -> void:
 func _process(delta: float) -> void:
 	if (stopped):
 		var text = dialogues[dialog]
-		if (current_letter <= len(text) and elapsed >= 0.05):
+		if (current_letter <= len(text) and elapsed >= 0.03):
 			lab.text = text.substr(0,current_letter)
 			current_letter+=1
 			elapsed = 0
