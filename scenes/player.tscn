@@ -80,7 +80,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walking",
-"speed": 10.0
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sn76n"]
@@ -92,10 +92,18 @@ script = ExtResource("1_mtprm")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7juhu")
-animation = &"ending"
+animation = &"walking"
 autoplay = "idle"
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_sn76n")
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+volume_db = -80.0
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+volume_db = -20.0
+
+[connection signal="finished" from="Audio" to="." method="_on_audio_finished"]
