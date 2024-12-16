@@ -260,8 +260,8 @@ energy = 6.0
 texture = ExtResource("6_elwa8")
 
 [node name="L5" type="PointLight2D" parent="."]
-position = Vector2(832.5, 564)
-scale = Vector2(7.01563, 1.625)
+position = Vector2(833.5, 564)
+scale = Vector2(8.57812, 2.0625)
 energy = 6.0
 texture = ExtResource("6_elwa8")
 
