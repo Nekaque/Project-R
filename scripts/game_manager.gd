@@ -23,6 +23,14 @@ func _input(event: InputEvent) -> void:
 	if (event.is_action_pressed("trans")): next()
 	if (event.is_action_pressed("reset")): reset()
 	if (event.is_action_pressed("time")): $Label.visible = !$Label.visible
+	if (event.is_action_pressed("rerun")):
+		level = 0
+		update()
+		var timer = get_tree().create_timer(TIME)
+		await timer.timeout
+		get_tree().change_scene_to_file(prefix+levels[level])
+		end = 0
+		update()
 
 func _process(delta: float) -> void:
 	if (started):
