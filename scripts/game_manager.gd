@@ -34,7 +34,7 @@ func _input(event: InputEvent) -> void:
 		started = true
 		update()
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if (started):
 		end+=delta
 		$Label.text = str(end)
