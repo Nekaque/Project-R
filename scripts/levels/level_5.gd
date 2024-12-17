@@ -6,8 +6,8 @@ func _ready() -> void:
 	var tween = get_tree().create_tween()
 	tween.tween_property($Start, "modulate:a", 0, 1)
 	p.controlable = false
-	p.dir = 1
-	var timer = get_tree().create_timer(0.8)
+	p.dir = 1.1
+	var timer = get_tree().create_timer(0.6)
 	await  timer.timeout
 	p.controlable = true
 
