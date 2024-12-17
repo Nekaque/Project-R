@@ -4,16 +4,17 @@ extends CanvasLayer
 @onready var fade = $ColorRect
 const TIME = 0.5
 var level = 0
-var prefix = "res://scenes/levels/"
+var prefix = "res://scenes/Levels/"
 var levels = ["level_1.tscn", "level_2.tscn", "level_3.tscn", "level_4.tscn", "level_5.tscn", "end.tscn"]
 @onready var sfx = $SFX
 @onready var music = $Music
+var another = true
 
 
 func _ready() -> void:
 	fade.color = Color("black",0)
-	sfx.volume_db = -20
-	music.volume_db = -20
+	sfx.volume_db = -10
+	music.volume_db = -10
 	play_music("res://assets/sounds/XRE.ogg")
 
 func _input(event: InputEvent) -> void:
@@ -54,8 +55,13 @@ func good_ending():
 	update()
 
 func next():
-	level+=1
-	reset()
+	if (another):
+		another = false
+		level+=1
+		reset()
+	var timer = get_tree().create_timer(TIME)
+	await timer.timeout
+	another = true
 	
 func play_sound(name):
 	sfx.stream = load(name) as AudioStream

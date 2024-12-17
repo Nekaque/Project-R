@@ -101,10 +101,5 @@ visible = false
 position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_sn76n")
 
-[node name="Audio" type="AudioStreamPlayer" parent="."]
-volume_db = -80.0
-
 [node name="Jump" type="AudioStreamPlayer" parent="."]
-volume_db = -20.0
-
-[connection signal="finished" from="Audio" to="." method="_on_audio_finished"]
+volume_db = -10.0
