@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=4 uid="uid://bbr2gv5l4gd25"]
+[gd_scene load_steps=5 format=4 uid="uid://bbr2gv5l4gd25"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_kbcnm"]
 [ext_resource type="TileSet" uid="uid://dsy22y1lauxjo" path="res://assets/resources/parallax.tres" id="1_oa1lq"]
+[ext_resource type="FontFile" uid="uid://8sli04n51xfj" path="res://assets/resources/PixelOperator8.ttf" id="3_xs2x6"]
+[ext_resource type="FontFile" uid="uid://dmp8eftw6cobk" path="res://assets/resources/PixelOperator8-Bold.ttf" id="4_v1qul"]
 
 [node name="Menu" type="CanvasLayer"]
 layer = 0
@@ -31,6 +33,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_xs2x6")
 theme_override_font_sizes/font_size = 45
 text = "ADVENTURE
 TIME!!!"
@@ -47,6 +50,7 @@ offset_right = 50.0
 offset_bottom = 118.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_xs2x6")
 theme_override_font_sizes/font_size = 30
 text = "NAH"
 
@@ -60,7 +64,8 @@ offset_right = 634.0
 offset_bottom = 300.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 64
+theme_override_fonts/font = ExtResource("4_v1qul")
+theme_override_font_sizes/font_size = 40
 text = "SEARCH FOR THE GREATEST TREASURE"
 horizontal_alignment = 1
 

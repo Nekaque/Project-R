@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://cuy4ytcykjgxb"]
+[gd_scene load_steps=7 format=4 uid="uid://cuy4ytcykjgxb"]
 
 [ext_resource type="TileSet" uid="uid://dsy22y1lauxjo" path="res://assets/resources/parallax.tres" id="1_4pwd6"]
 [ext_resource type="Script" path="res://scripts/good_ending.gd" id="1_x4u31"]
 [ext_resource type="TileSet" uid="uid://kbhst3ledd6r" path="res://assets/resources/player_area.tres" id="2_s55du"]
 [ext_resource type="PackedScene" uid="uid://dckpeulrwpquj" path="res://scenes/klara.tscn" id="3_k6g1l"]
+[ext_resource type="FontFile" uid="uid://8sli04n51xfj" path="res://assets/resources/PixelOperator8.ttf" id="4_30cru"]
 [ext_resource type="PackedScene" uid="uid://blecki1e2xtkf" path="res://scenes/player.tscn" id="4_a43t7"]
 
 [node name="Good Ending" type="Node"]
@@ -29,12 +30,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -111.5
-offset_top = -86.5
-offset_right = 111.5
-offset_bottom = -63.5
+offset_left = -57.0
+offset_top = -86.0
+offset_right = 34.0
+offset_bottom = -63.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_30cru")
 text = "DALSI TEXT"
 
 [node name="Camera2D" type="Camera2D" parent="Klara"]
@@ -44,12 +47,13 @@ zoom = Vector2(2.5, 2.5)
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -65.5
+offset_left = -65.0
 offset_top = -135.0
-offset_right = 65.5
+offset_right = 40.0
 offset_bottom = -112.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_30cru")
 text = "NEJAKEJ TEXT"
 
 [node name="Me" parent="." instance=ExtResource("4_a43t7")]
