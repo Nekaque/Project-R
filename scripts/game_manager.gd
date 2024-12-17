@@ -9,6 +9,8 @@ var levels = ["level_1.tscn", "level_2.tscn", "level_3.tscn", "level_4.tscn", "l
 @onready var sfx = $SFX
 @onready var music = $Music
 var another = true
+var started = false
+var end = 0
 
 
 func _ready() -> void:
@@ -20,6 +22,12 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if (event.is_action_pressed("trans")): next()
 	if (event.is_action_pressed("reset")): reset()
+	if (event.is_action_pressed("time")): $Label.visible = !$Label.visible
+
+func _process(delta: float) -> void:
+	if (started):
+		end+=delta
+		$Label.text = str(end)
 
 func reset():
 	update()

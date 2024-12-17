@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpj47n3gwk247"]
+[gd_scene load_steps=3 format=3 uid="uid://cpj47n3gwk247"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_pe7ml"]
+[ext_resource type="FontFile" uid="uid://8sli04n51xfj" path="res://assets/resources/PixelOperator8.ttf" id="2_mlotk"]
 
 [node name="GameManager" type="CanvasLayer"]
 script = ExtResource("1_pe7ml")
@@ -14,5 +15,16 @@ color = Color(0, 0, 0, 1)
 [node name="SFX" type="AudioStreamPlayer" parent="."]
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 4.0
+offset_top = 6.0
+offset_right = 80.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0, 0.901961, 0, 1)
+theme_override_fonts/font = ExtResource("2_mlotk")
+text = "0
+"
 
 [connection signal="finished" from="Music" to="." method="_on_music_finished"]

@@ -44,6 +44,7 @@ func _process(delta: float) -> void:
 		else: elapsed+=delta
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	GM.started = false
 	$Klara/Camera2D.visible = true
 	$Me/Camera2D.queue_free()
 	p.controlable = false
