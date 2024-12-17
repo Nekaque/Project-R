@@ -56,7 +56,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	tween.set_parallel()
 	tween.tween_property(klara,"modulate:a", 1, TIME)
 	tween.tween_property($Chest,"modulate:a", 0, TIME)
-	tween.tween_property($ColorRect,"modulate:a", 1, TIME)
+	tween.tween_property($ColorRect,"modulate:a", 0.9, TIME)
 	tween.tween_property(lab,"modulate:a", 1, TIME)
 	tween.tween_property($Space,"modulate:a",1,TIME)
 	var timer = get_tree().create_timer(TIME)
