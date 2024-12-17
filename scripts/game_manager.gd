@@ -24,12 +24,14 @@ func _input(event: InputEvent) -> void:
 	if (event.is_action_pressed("reset")): reset()
 	if (event.is_action_pressed("time")): $Label.visible = !$Label.visible
 	if (event.is_action_pressed("rerun")):
+		play_music("res://assets/sounds/XRE.ogg")
 		level = 0
 		update()
 		var timer = get_tree().create_timer(TIME)
 		await timer.timeout
 		get_tree().change_scene_to_file(prefix+levels[level])
 		end = 0
+		started = true
 		update()
 
 func _process(delta: float) -> void:
