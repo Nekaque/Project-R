@@ -163,6 +163,18 @@ scale_amount_curve = SubResource("Curve_352gs")
 color = Color(0.0431373, 0.6, 0.796078, 1)
 color_ramp = SubResource("Gradient_20whq")
 
+[node name="LM1" type="PointLight2D" parent="."]
+position = Vector2(905, 380)
+scale = Vector2(0.808065, 0.808065)
+energy = 10.0
+texture = ExtResource("5_nnmwm")
+
+[node name="LM2" type="PointLight2D" parent="."]
+position = Vector2(216, 365)
+scale = Vector2(0.808065, 0.808065)
+energy = 10.0
+texture = ExtResource("5_nnmwm")
+
 [connection signal="body_entered" from="Water" to="." method="_on_water_body_entered"]
 [connection signal="body_exited" from="Water" to="." method="_on_water_body_exited"]
 [connection signal="body_entered" from="End" to="." method="_on_end_body_entered"]
