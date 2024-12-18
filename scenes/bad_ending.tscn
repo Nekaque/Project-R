@@ -15,12 +15,13 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -144.0
-offset_top = 57.0
+offset_top = 36.0
 offset_right = 146.0
 offset_bottom = 80.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("1_mvjgk")
-text = "TADY BUDE NEJAKEJ TEXT"
+text = "S TÍMHLE ENDINGEM SE NEBUDU SRÁT, STEJNĚ HO NEVYBERE."
+vertical_alignment = 1
 
 [node name="Credits" type="Label" parent="."]
 anchors_preset = 8
@@ -35,4 +36,6 @@ offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_mvjgk")
-text = "DALSI TEXT"
+text = "WAIT WHAT?! UPS ..."
+horizontal_alignment = 1
+vertical_alignment = 1

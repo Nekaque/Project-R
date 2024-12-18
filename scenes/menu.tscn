@@ -25,18 +25,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = -72.0
-offset_right = 150.0
-offset_bottom = 62.0
+offset_left = -223.0
+offset_top = -40.5
+offset_right = 223.0
+offset_bottom = 40.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("3_xs2x6")
-theme_override_font_sizes/font_size = 45
-text = "ADVENTURE
-TIME!!!"
+theme_override_font_sizes/font_size = 30
+text = "ADVENTURE TIME!!!"
 
 [node name="Exit" type="Button" parent="."]
 anchors_preset = 8
@@ -44,10 +43,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = 68.0
-offset_right = 50.0
-offset_bottom = 118.0
+offset_left = -61.0
+offset_top = 58.0
+offset_right = 61.0
+offset_bottom = 108.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_xs2x6")
@@ -66,8 +65,9 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_v1qul")
 theme_override_font_sizes/font_size = 40
-text = "SEARCH FOR THE GREATEST TREASURE"
+text = "IN SEARCH OF THE GREATEST TREASURE"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Find" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
