@@ -58,7 +58,7 @@ text = "NEJAKEJ TEXT"
 
 [node name="Me" parent="." instance=ExtResource("4_a43t7")]
 z_index = 1
-position = Vector2(669, 341)
+position = Vector2(737, 340)
 collision_layer = 3
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
