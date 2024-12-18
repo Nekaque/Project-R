@@ -25,6 +25,7 @@ position = Vector2(699, 341)
 collision_layer = 3
 
 [node name="Passed" type="Label" parent="Klara"]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5

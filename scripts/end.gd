@@ -4,7 +4,7 @@ extends Node
 @onready var klara = $Klara
 @onready var lab = $Label
 var dialog = 0
-var dialogues = ["V: Zdravíčko, zdravim", "K: Čau ne. Ty ramena máš hustý",
+var dialogues = ["V: Zdravíčko zdravim", "K: Čau ne. Ty ramena máš hustý",
 	"V: Ty máš hustý boky", "K: Dankeee", "V: Co by bokoholka řekla, kdyby jí ramenáč pozval na rande?", "K: *zobrazeno*",
 	 "V: Hej?", "K: ...", "V: Bruh. Počkám venku."]
 var current_letter = 0
