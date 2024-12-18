@@ -14,6 +14,7 @@ func _on_lava_body_entered(body: Node2D) -> void:
 	p.velocity.y = 40
 	p.gravity = 0.01
 	p.speed = 0
+	p.death()
 	GM.play_sound(lava)
 	GM.reset()
 

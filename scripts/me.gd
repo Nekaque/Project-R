@@ -20,8 +20,8 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_pressed("jump") and coyote >= 0:
 			velocity.y = jump_velocity
 			coyote = 0
-			$Jump.stream =  load("res://assets/sounds/hop.wav") as AudioStream
-			$Jump.play()
+			$Audio.stream =  load("res://assets/sounds/hop.wav") as AudioStream
+			$Audio.play()
 		if dir != 0:
 			velocity.x = dir * speed
 			sprite.animation = "walking"
@@ -50,6 +50,6 @@ func _physics_process(delta: float) -> void:
 		
 	move_and_slide()
 
-
-func _on_audio_finished() -> void:
+func death():
+	$Audio.stream =  load("res://assets/sounds/death.wav") as AudioStream
 	$Audio.play()
