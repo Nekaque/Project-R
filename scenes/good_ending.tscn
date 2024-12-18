@@ -24,37 +24,38 @@ z_index = 1
 position = Vector2(699, 341)
 collision_layer = 3
 
+[node name="Passed" type="Label" parent="Klara"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -202.0
+offset_top = -139.0
+offset_right = 202.0
+offset_bottom = -116.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_30cru")
+text = "A ŽILI SPOLU ŠŤASTNĚ AŽ DO SMRTI"
+horizontal_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="Klara"]
+zoom = Vector2(2.5, 2.5)
+
 [node name="Retard" type="Label" parent="Klara"]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -57.0
+offset_left = -194.5
 offset_top = -86.0
-offset_right = 34.0
+offset_right = 171.5
 offset_bottom = -63.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("4_30cru")
-text = "DALSI TEXT"
-
-[node name="Camera2D" type="Camera2D" parent="Klara"]
-zoom = Vector2(2.5, 2.5)
-
-[node name="Passed" type="Label" parent="Klara"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -65.0
-offset_top = -135.0
-offset_right = 40.0
-offset_bottom = -112.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_30cru")
-text = "NEJAKEJ TEXT"
 
 [node name="Me" parent="." instance=ExtResource("4_a43t7")]
 z_index = 1

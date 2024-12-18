@@ -20,8 +20,8 @@ func _ready() -> void:
 	play_music("res://assets/sounds/XRE.ogg")
 
 func _input(event: InputEvent) -> void:
-	if (event.is_action_pressed("trans")): next()
-	if (event.is_action_pressed("reset")): reset()
+	#if (event.is_action_pressed("trans")): next()
+	#if (event.is_action_pressed("reset")): reset()
 	if (event.is_action_pressed("time")): $Label.visible = !$Label.visible
 	if (event.is_action_pressed("rerun")):
 		play_music("res://assets/sounds/XRE.ogg")
